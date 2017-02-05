@@ -1,0 +1,46 @@
+---
+title: "Restitution - Maelström Lab #3"
+subtitle: "Les 5, 6, 7 et 8 Mai à Mettray"
+menu:
+  www.maelstrom-lab.com: http://www.maelstrom-lab.com
+  bonjour@maelstrom-lab.com: mailto:bonjour@maelstrom-lab.com
+footer_note:
+  Pour toute réclamation sur une photo, envoyez nous un email sur
+  <a href="mailto:bonjour@maelstrom-lab.com">bonjour@maelstrom-lab.com</a>, avec
+  un screenshot de la photo en question et la raison de la reclamation.
+  <br><br>
+  Si vous trouvez un bug, envoyez moi un email à
+  <a href="mailto:garnier.etienne@gmail.com">garnier.etienne@gmail.com</a>.
+  <br><br>
+  Bisous.
+---
+
+<header>
+  <div id="header-background"></div>
+  <div id="header-overlay"></div>
+  <nav>
+    <ul id="header-menu">
+      <% current_page.data.menu.each do |entry_name, entry_dst| %>
+        <li><a href="<%= entry_dst %>"><%= entry_name %></a></li>
+      <% end %>
+    </ul>
+  </nav>
+  <h1><%= current_page.data.title %></h1>
+  <div class="subtitle"><%= current_page.data.subtitle %></div>
+</header>
+
+<main>
+  <div class="info-loading">
+    <div class="spinner"></div>
+    <div class="info-loading-text"></div>
+  </div>
+  <div class="masonry">
+    <%= build_portfolio_wall %>
+  </div>
+</main>
+
+<footer>
+  <p class="note">
+    <%= current_page.data.footer_note %>
+  </p>
+</footer>
